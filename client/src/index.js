@@ -5,6 +5,9 @@ import './index.css'
 import App from './App'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
+import { setAxiosTokenGetter } from './utils/axios'
+
+setAxiosTokenGetter(() => store.getState().auth.token)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

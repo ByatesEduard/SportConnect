@@ -1,0 +1,314 @@
+/* ─── Field Components ───────────────────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px; 
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  padding: 13px 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(36,174,124,0.1);
+}
+
+.input.has-icon {
+  padding-left: 42px;
+}
+
+.input-error {
+  border-color: var(--red);
+}
+
+.input-error:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(248,113,113,0.1);
+}
+
+.field-error {
+  font-size: 12px;
+  color: var(--red);
+  margin-top: 4px;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  gap: 12px;
+  padding-top: 4px;
+  flex-wrap: wrap;
+}
+
+.radio-opt {
+  display: flex; 
+  align-items: center; 
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+  color: var(--muted);
+}
+
+.radio-opt.selected {
+  border-color: var(--green);
+  background: var(--green-dim);
+  color: var(--text);
+}
+
+.radio-opt input[type="radio"] {
+  display: none;
+}
+
+/* ─── Button Components ─────────────────────────────────────────────────────────── */
+.btn {
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-ghost {
+  background: var(--surface2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+  color: var(--text); 
+  border-color: #3a3f4e;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+  min-width: 160px;
+}
+
+.btn-primary:hover {
+  background: #1d9a6c; 
+  transform: translateY(-1px); 
+  box-shadow: 0 8px 24px rgba(36,174,124,0.25);
+}
+
+.btn-primary:active {
+  transform: none;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5; 
+  cursor: not-allowed; 
+  transform: none;
+}
+
+.btn-danger {
+  background: var(--red);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(248,113,113,0.25);
+}
+
+/* ─── Card Components ──────────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--surface2);
+}
+
+/* ─── Layout Components ─────────────────────────────────────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 280px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 28px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 60px 80px;
+  max-width: 860px;
+}
+
+.welcome {
+  margin-bottom: 48px;
+}
+
+.welcome h1 {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.welcome p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.3px;
+}
+
+.progress-bar {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* Form/layout rows — flex instead of grid */
+.grid-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+  }
+  .sidebar {
+    display: none;
+  }
+  .main {
+    padding: 32px 24px;
+  }
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.personal-form-step,
+.personal-step-content {
+  transition: opacity 0.25s ease;
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 24px 16px;
+  }
+  .welcome h1 {
+    font-size: 28px;
+  }
+  .btn {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}

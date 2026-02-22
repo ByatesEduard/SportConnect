@@ -1,13 +1,19 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { selectIsAuthenticated } from '../redux/features/auth/authSlice'
 import { Navbar } from './Navbar'
 
 export const Layout = ({ children }) => {
+    const isAuthenticated = useSelector(selectIsAuthenticated)
+
     return (
-        <React.Fragment>
-            <div className='container mx-auto'>
-                <Navbar />
+        <div className="app-layout">
+            {isAuthenticated && <Navbar />}
+            <main className={`app-main ${isAuthenticated ? 'with-navbar' : ''}`}>
                 {children}
-            </div>
-        </React.Fragment>
+            </main>
+        </div>
     )
 }
+
+export default Layout

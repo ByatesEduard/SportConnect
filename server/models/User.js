@@ -7,6 +7,10 @@ const UserSchema = new mongoose.Schema(
           required: true,
           unique: true,
         },
+        fullName: {
+          type: String,
+          required: false,
+        },
         email: {
             type: String,
             required: true,
@@ -25,6 +29,10 @@ const UserSchema = new mongoose.Schema(
             required: false,
         },  
         city: {
+            type: String,
+            required: false,
+        },
+        address: {
             type: String,
             required: false,
         },
@@ -54,6 +62,14 @@ const UserSchema = new mongoose.Schema(
         experience: {
            type: Number,
            required: false,
+        },
+        fitnessGoals: {
+            type: String,
+            required: false,
+        },
+        activityLevel: {
+            type: String,
+            required: false,
         },
 
         achievements: {
